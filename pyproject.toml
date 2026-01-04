@@ -1,0 +1,27 @@
+[project]
+dependencies = [
+    "numpy",
+    "ipython",
+    "rich",
+    "keyring",
+    "pyserial",
+    "pyvisa",
+    "opencv-python-headless",
+    "azcam",
+    "azcam-console",
+]
+name = "imcon"
+version = "26.0"
+description = "imcon package for controlling imaging systems"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["imaging", "astronomy", "cameras"]
+authors = [{ name = "Michael Lesser" }, { email = "mlesser.az@gmail.com" }]
+[project.urls]
+Documentation = "https://imcon.readthedocs.io/"
+Repository = "https://github.com/mplesser/imcon/"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
