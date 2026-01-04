@@ -2,5 +2,6 @@ title: imcon Home
 author: Michael Lesser
 description: imcon - imaging system control
 show_downloads: true
-google_analytics:
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/architect@v0.2.0
+plugins:
+- jekyll-remote-theme
