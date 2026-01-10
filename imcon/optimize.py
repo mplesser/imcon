@@ -1,24 +1,25 @@
 """
 Optimize azcam built-ins for imcon.
+Everything here is imported to the imcon CLI.
 """
 
+import azcam
 import azcam.cli
 
 
-def optimize():
+if "db" in azcam.cli.__all__:
+    azcam.cli.__all__.remove("db")
 
-    # CL
-    if "db" in azcam.cli.__all__:
-        azcam.cli.__all__.remove("db")
+if "parameters" in azcam.cli.__all__:
+    azcam.cli.__all__.remove("parameters")
 
-    if "parameters" in azcam.cli.__all__:
-        azcam.cli.__all__.remove("parameters")
-
-    if "api" in azcam.cli.__all__:
-        azcam.cli.__all__.remove("api")
-
-    return
+if "api" in azcam.cli.__all__:
+    azcam.cli.__all__.remove("api")
 
 
-# execute
-optimize()
+# set imports
+tools = azcam.db.tools
+pars = azcam.db.parameters
+api = azcam.db.api
+
+__all__ = ["azcam", "tools", "pars", "api"]

@@ -13,8 +13,8 @@ from imcon.ipython_config import ipython_config
 def main():
     """
     Starts imcon.
-    Usage examples: imcon full_path_to_config_file
-                    python -m imcon full_path_to_config_file
+    Usage examples: imcon full_path_to_config_file -- <options>
+                    python -m imcon full_path_to_config_file -- <options>
     """
 
     print("Welcome to imcon")
@@ -42,12 +42,8 @@ def main():
         c.InteractiveShellApp.exec_lines.append(config_command)
 
         # optimize for imcon instead of azcam
-        _cmd = f"import imcon.optimize"
+        _cmd = f"from imcon.optimize import *"
         c.InteractiveShellApp.exec_lines.append(_cmd)
-
-        # import Tools to IPython CL
-        config_command = f"from azcam.cli import *"
-        c.InteractiveShellApp.exec_lines.append(config_command)
 
     # start IPython in interactive mode
     IPython.start_ipython([], config=c)
@@ -56,4 +52,4 @@ def main():
 
 
 if __name__ == "__main__":
-    imcon = main()
+    main()

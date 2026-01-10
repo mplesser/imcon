@@ -19,6 +19,7 @@ def ipython_config():
         "from imcon.ipython_config import MyPrompts",
         "ip=get_ipython()",
         "ip.prompts=MyPrompts(ip)",
+        "del MyPrompts, ip",
     ]
     c.InteractiveShellApp.gui = "tk"
     c.InteractiveShellApp.matplotlib = "tk"

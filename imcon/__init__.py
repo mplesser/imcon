@@ -1,6 +1,6 @@
 """
-imcon is a python application used to control scientific imaging systems.
-"""
+imcon is an application used to control imaging systems such as those
+used for scientific observations."""
 
 from importlib import metadata
 
