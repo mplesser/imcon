@@ -17,7 +17,7 @@ def main():
                     python -m imcon full_path_to_config_file -- <options>
     """
 
-    print("Welcome to imcon")
+    print("Welcome to imcon!")
 
     # configure IPython
     c = ipython_config()
@@ -25,10 +25,10 @@ def main():
     # check for config file as first argument on command line
     if len(sys.argv) == 1:
         config_file = ""
-        print("no configuration file specified")
+        print("No configuration file specified")
     else:
         config_file = sys.argv[1]
-        print("configuration file is", config_file)
+        print("Configuration file is", config_file)
 
         # add config_file folder to Python search path
         config_folder = os.path.dirname(config_file)
@@ -37,7 +37,7 @@ def main():
             config_file = config_file[:-3]
         sys.path.append(config_folder)
 
-        # import config_file when IPython starts
+        # import everything from config_file when IPython starts
         config_command = f"from {config_file} import *"
         c.InteractiveShellApp.exec_lines.append(config_command)
 

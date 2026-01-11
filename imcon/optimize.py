@@ -4,18 +4,6 @@ Everything here is imported to the imcon CLI.
 """
 
 import azcam
-import azcam.cli
-
-
-if "db" in azcam.cli.__all__:
-    azcam.cli.__all__.remove("db")
-
-if "parameters" in azcam.cli.__all__:
-    azcam.cli.__all__.remove("parameters")
-
-if "api" in azcam.cli.__all__:
-    azcam.cli.__all__.remove("api")
-
 
 # set imports
 tools = azcam.db.tools
