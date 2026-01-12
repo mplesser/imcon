@@ -1,7 +1,7 @@
 [project]
 dependencies = ["azcam"]
 name = "imcon"
-version = "26.0.2"
+version = "26.0.3"
 description = "imcon package for controlling imaging systems"
 license = { file = "LICENSE" }
 readme = "README.md"
